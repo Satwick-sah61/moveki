@@ -1,0 +1,15 @@
+# Docker matches these from the context root (Go filepath.Match), so nested paths need **/.
+.git
+.venv
+.vercel
+.github
+**/.pytest_cache
+**/.ruff_cache
+**/__pycache__
+**/*.py[cod]
+frontend/node_modules
+frontend/dist
+tests
+scripts
+docs
+**/*.md

@@ -1,0 +1,120 @@
+{
+  "description": "GB wind forecasts (WINDFOR) and actual wind generation (FUELHH, fuelType WIND) from Elexon BMRS, snapshot for the Day-Ahead Wind Desk.",
+  "fetched_at_utc": "2026-10-25T23:36:01Z",
+  "scored_window": {
+    "from": "2026-01-02",
+    "to": "2026-02-01",
+    "note": "Delivery days for purchase decisions made in January 2026; earlier rows are warm-up only."
+  },
+  "sources": {
+    "WINDFOR": {
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2025-12-21T00:00Z&publishDateTimeTo=2026-02-02T00:00Z",
+      "raw_rows": 25112
+    },
+    "FUELHH": {
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?settlementDateFrom=2025-12-22&settlementDateTo=2026-02-01&fuelType=WIND",
+      "raw_rows": 2016
+    }
+  },
+  "files": {
+    "forecasts_wind.csv": {
+      "sha256": "ef725cc046c5c5967eb696aed7af14d26eff7818ca71993cb0948b652ecd965e",
+      "bytes": 1195712,
+      "rows": 25112,
+      "runs": 344,
+      "runs_per_utc_day": {
+        "8": 43
+      },
+      "publish_clock_times_utc": {
+        "02:30": 43,
+        "04:30": 43,
+        "07:30": 43,
+        "09:30": 43,
+        "11:30": 42,
+        "12:25": 1,
+        "15:30": 43,
+        "18:30": 43,
+        "22:30": 43
+      },
+      "first_publish_utc": "2025-12-21T02:30:00Z",
+      "last_publish_utc": "2026-02-01T22:30:00Z",
+      "run_window_shapes_hours": [
+        {
+          "min_lead_h": -25.5,
+          "max_lead_h": 46.5,
+          "targets": 73,
+          "runs": 43
+        },
+        {
+          "min_lead_h": -21.5,
+          "max_lead_h": 50.5,
+          "targets": 73,
+          "runs": 43
+        },
+        {
+          "min_lead_h": -18.5,
+          "max_lead_h": 53.5,
+          "targets": 73,
+          "runs": 43
+        },
+        {
+          "min_lead_h": -15.4,
+          "max_lead_h": 56.6,
+          "targets": 73,
+          "runs": 1
+        },
+        {
+          "min_lead_h": -14.5,
+          "max_lead_h": 57.5,
+          "targets": 73,
+          "runs": 42
+        },
+        {
+          "min_lead_h": -12.5,
+          "max_lead_h": 59.5,
+          "targets": 73,
+          "runs": 43
+        },
+        {
+          "min_lead_h": -10.5,
+          "max_lead_h": 61.5,
+          "targets": 73,
+          "runs": 43
+        },
+        {
+          "min_lead_h": -7.5,
+          "max_lead_h": 64.5,
+          "targets": 73,
+          "runs": 43
+        },
+        {
+          "min_lead_h": -5.5,
+          "max_lead_h": 66.5,
+          "targets": 73,
+          "runs": 43
+        }
+      ],
+      "generation_mw_min": 1981.0,
+      "generation_mw_max": 21353.0
+    },
+    "actuals_wind.csv": {
+      "sha256": "eb3f29087fe5835488291be6b30bd215295bda48abd57848ac18f2d211a86b46",
+      "bytes": 123823,
+      "rows": 2016,
+      "settlement_days": 42,
+      "scored_half_hours": 1488,
+      "first_start_utc": "2025-12-22T00:00:00Z",
+      "last_start_utc": "2026-02-01T23:30:00Z",
+      "publish_lag_minutes_after_period_start": {
+        "30": 2012,
+        "56": 1,
+        "86": 1,
+        "116": 1,
+        "145": 1
+      },
+      "generation_mw_min": 1695.0,
+      "generation_mw_max": 17805.0
+    }
+  },
+  "warnings": []
+}

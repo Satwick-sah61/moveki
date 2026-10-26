@@ -1,0 +1,7 @@
+# Keep Docker and shell files LF on every platform (the image is built on Linux).
+* text=auto
+Dockerfile text eol=lf
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.csv text eol=lf
